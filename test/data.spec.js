@@ -59,18 +59,17 @@ describe('buscarNome', () => {
 // });
 
 /////////////////////TESTE PARA FILTRAR A ESPÉCIE 
-
 describe('buscarEspecie', () => {
   it('Deverá ser uma função', () => {
   expect(typeof buscarEspecie).toBe('function');
 });
 
 it('Deverá filtrar pela espécie Alien', () => {
-  const specieAlien = "Alien"
-  const expected = buscarEspecie(dados, specieAlien)
+  const especieAlien = "Alien"
+  const expected = buscarEspecie(dados, especieAlien)
   expect (expected.length).toEqual(2)
-  expect (expected[0].species).toEqual(specieAlien)
-  expect (expected[1].species).toEqual(specieAlien)
+  expect (expected[0].species).toEqual(especieAlien)
+  expect (expected[1].species).toEqual(especieAlien)
   });
 });
 
@@ -80,8 +79,6 @@ describe('sortOrdem', () => {
   expect(typeof sortOrdem).toBe('function');
 });
 
-  it('returns `example`', () => {
-    expect(example()).toBe('example');
   it('Deverá retornar em ordem A-Z', () => {
     expect(sortOrdem(nomes, "a-z")).toEqual([nomes[0], nomes[3], nomes[2], nomes[1]]);
   });
@@ -89,7 +86,6 @@ describe('sortOrdem', () => {
     expect(sortOrdem(nomes, "z-a")).toEqual([nomes[1], nomes[2], nomes[3], nomes[0]]);
   });
 });
-
 
 /////////////////////TESTE PARA CALCULAR A PORCENTAGEM
 describe('calculos', () => {
@@ -102,3 +98,4 @@ it('Deverá retornar 50% de personagens masculinos', () => {
   expect (expected).toEqual(50)
   });
 });
+
