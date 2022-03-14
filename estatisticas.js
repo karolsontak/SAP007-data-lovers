@@ -1,19 +1,17 @@
 /* global Chart */
 import data from './data/rickandmorty/rickandmorty.js';
-import { filtrarPorChaveEValor } from './data.js';
 
 const dados = data.results
 
-
 //Status
-const vivo = filtrarPorChaveEValor (dados, "status", "Alive")
-const morto = filtrarPorChaveEValor (dados, "status",  "Dead")
-const desconhecido = filtrarPorChaveEValor (dados, "status", "unknown")
+const vivo = dados.filter(resultado => resultado.status === "Alive")
+const morto = dados.filter(resultado => resultado.status === "Dead")
+const desconhecido = dados.filter(resultado => resultado.status === "unknown")
 
 //Genero
-const masculino = filtrarPorChaveEValor (dados, "gender", "Male")
-const feminino = filtrarPorChaveEValor (dados, "gender", "Female")
-const indefinido = filtrarPorChaveEValor (dados, "gender", "unknown")
+const masculino = dados.filter(resultado => resultado.gender === "Male")
+const feminino = dados.filter(resultado => resultado.gender === "Female")
+const indefinido = dados.filter(resultado => resultado.gender === "unknown")
 
 //Especie
 const alien = dados.filter(resultado => resultado.species === "Alien")
