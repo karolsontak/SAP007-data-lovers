@@ -1,4 +1,4 @@
-import { buscarNome, buscarEspecie, sortOrdem, calculos} from '../src/data.js';
+import { buscarNome, buscarEspecie, ordenacao, calculos} from '../src/data.js';
 
 const dados = [
    {
@@ -67,14 +67,14 @@ it('Deverá filtrar pela espécie Alien', () => {
 /////////////////////TESTE PARA ORDENAÇÃO ALFABÉTICA
 describe('sortOrdem', () => {
   it('Deverá ser uma função', () => {
-  expect(typeof sortOrdem).toBe('function');
+  expect(typeof ordenacao).toBe('function');
 });
 
   it('Deverá retornar em ordem A-Z', () => {
-    expect(sortOrdem(nomes, "a-z")).toEqual([nomes[0], nomes[3], nomes[2], nomes[1]]);
+    expect(ordenacao(nomes, "a-z")).toEqual([nomes[0], nomes[3], nomes[2], nomes[1]]);
   });
   it('Deverá retornar em ordem Z-A', () => {
-    expect(sortOrdem(nomes, "z-a")).toEqual([nomes[1], nomes[2], nomes[3], nomes[0]]);
+    expect(ordenacao(nomes, "z-a")).toEqual([nomes[1], nomes[2], nomes[3], nomes[0]]);
   });
 });
 
